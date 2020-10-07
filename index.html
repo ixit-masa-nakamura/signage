@@ -4,15 +4,23 @@
 <meta charset="UTF-8">
 <title>TipsNote : GitHub Pages Sample</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/marx/2.0.4/marx.css">
+<script>
+function openLink() {
+    window.open('http://192.168.10.1/cmd.htm?c=pon1', '1');
+    window.open('http://192.168.10.1/cmd.htm?c=pon2', '2');
+}
+function offLink() {
+    window.open('http://192.168.10.1/cmd.htm?c=pof1', '1');
+    window.open('http://192.168.10.1/cmd.htm?c=pof2', '2');
+}
+</script>
 </head>
 
 <body>
 <main>
   <h1>signageのサンプルです</h1>
-  <a href="http://192.168.10.1/cmd.htm?c=pon1"><button>１番点灯</button></a>
-  <a href="http://192.168.10.1/cmd.htm?c=pof1"><button>１番消灯</button></a>
-  <a href="http://192.168.10.1/cmd.htm?c=pon2"><button>２番点灯</button></a>
-  <a href="http://192.168.10.1/cmd.htm?c=pof2"><button>２番消灯</button></a>
+  <a href="javascript:void(0)" id="openLink" onClick="openLink()"><button>点灯</button></a>
+  <a href="javascript:void(0)" id="offLink" onClick="offLink()"><button>消灯</button></a>
 </main>
 
 <script>
