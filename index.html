@@ -5,14 +5,27 @@
 <title>TipsNote : GitHub Pages Sample</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/marx/2.0.4/marx.css">
 <script>
+
+var count = 0;
+var countup = function(){
+  console.log(count++);
+}
+
 function openLink() {
     window.open('http://192.168.10.1/cmd.htm?c=pon1', '1');
-    window.open('http://192.168.10.1/cmd.htm?c=pon2', '2');
+    countup();
+    if(count > 5){　
+      clearInterval(id);　//idをclearIntervalで指定している
+      window.open('http://192.168.10.1/cmd.htm?c=pon2', '2');
+    }}, 1000);
+
 }
+
 function offLink() {
     window.open('http://192.168.10.1/cmd.htm?c=pof1', '1');
     window.open('http://192.168.10.1/cmd.htm?c=pof2', '2');
 }
+
 </script>
 </head>
 
