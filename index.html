@@ -18,7 +18,7 @@
 
     <br>
 
-    <input type="text" id="SndMsg" placeholder="送信メッセージを入力"><br>
+    <input type="text" id="SndMsg" placeholder="pon1"><br>
 
     <input type="button" value="上記メッセージを送信" onclick="snd_msg()"><br>
 
@@ -40,7 +40,7 @@
 
         console.log("コネクションを開始しします。");
 
-        connection = new WebSocket('192.168.10.1:23');
+        connection = new WebSocket('ws://192.168.10.1:23');
 
         //コネクションが接続された時の動き
 
@@ -82,7 +82,7 @@
 
       function snd_msg(){
 
-        connection.send(document.getElementById("pon1").value);
+        connection.send("pon1");
 
       }
 
