@@ -12,7 +12,7 @@
 
     <h1>JavaScriptでWebSocket</h1>
 
-    <label>WebSocket通信を【wss://echo.websocket.org】と行います。</label><br>
+    <label>WebSocket通信を【192.168.10.1:23】と行います。</label><br>
 
     <input type="button" value="コネクション開始" onclick="open_cnn()"><br>
 
@@ -40,7 +40,7 @@
 
         console.log("コネクションを開始しします。");
 
-        connection = new WebSocket('wss://echo.websocket.org');
+        connection = new WebSocket('192.168.10.1:23');
 
         //コネクションが接続された時の動き
 
@@ -82,7 +82,7 @@
 
       function snd_msg(){
 
-        connection.send(document.getElementById("SndMsg").value);
+        connection.send(document.getElementById("pon1").value);
 
       }
 
