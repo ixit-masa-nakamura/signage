@@ -1,101 +1,39 @@
+<!DOCTYPE html>
 <html>
+<head>
+<meta charset="UTF-8">
+<title>TipsNote : GitHub Pages Sample</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/marx/2.0.4/marx.css">
+<script>
+function openLink() {
+    window.open('http://192.168.10.1/cmd.htm?c=pon1', '1');
+    openLink2()
+}
 
-  <head>
+function openLink2() {
+    window.open('http://192.168.10.1/cmd.htm?c=pon2', '2');
+}
 
-    <meta charset="UTF-8">
+function offLink() {
+    window.open('http://192.168.10.1/cmd.htm?c=pof1', '1');
+    offLink2()
+}
 
-    <title>JavaScriptでソケット通信（WebSocket）する方法</title>
+function offLink2() {
+    window.open('http://192.168.10.1/cmd.htm?c=pof2', '2');
+}
+</script>
+</head>
 
-  </head>
+<body>
+<main>
+  <h1>signageのサンプルです</h1>
+  <a href="javascript:void(0)" id="openLink" onClick="openLink()"><button>点灯</button></a>
+  <a href="javascript:void(0)" id="offLink" onClick="offLink()"><button>消灯</button></a>
+</main>
 
-  <body>
-
-    <h1>JavaScriptでWebSocket</h1>
-
-    <label>WebSocket通信を【192.168.10.1:23】と行います。</label><br>
-
-    <input type="button" value="コネクション開始" onclick="open_cnn()"><br>
-
-    <br>
-
-    <input type="text" id="SndMsg" placeholder="pon1"><br>
-
-    <input type="button" value="上記メッセージを送信" onclick="snd_msg()"><br>
-
-    <br>
-
-    <textarea id="RcvMsg" cols="40" rows="4" maxlength="20" placeholder="送信と同時に同じ内容が、受信メッセージとして反映されます。"</textarea><br>
-
-    <input type="button" value="コネクション終了" onclick="close_cnn()"><br>
-
-    <br>
-
-    <script type="text/javascript">
-
-      var connection = "";
-
-      //コネクション開始ボタン
-
-      function open_cnn(){
-
-        console.log("コネクションを開始しします。");
-
-        connection = new WebSocket('ws://192.168.10.1:23');
-
-        //コネクションが接続された時の動き
-
-        connection.onopen = function(e) {
-
-          console.log("コネクションを開始しまいた。");
-
-        };
-
-        //エラーが発生したされた時の動き
-
-        connection.onerror = function(error) {
-
-          console.log("エラーが発生しました。");
-
-        };
-
-        //メッセージを受け取ったされた時の動き
-
-        connection.onmessage = function(e) {
-
-          let msg = "メッセージを受信しました。" + e.data;
-
-          document.getElementById("RcvMsg").value = msg;
-
-        };
-
-        //通信が切断された時の動き
-
-        connection.onclose = function() {
-
-          console.log("コネクションを終了しまいた。");
-
-        };
-
-      }
-
-      //メッセージ送信ボタン
-
-      function snd_msg(){
-
-        connection.send("pon1");
-
-      }
-
-      //コネクション終了ボタン
-
-      function close_cnn(){
-
-        connection.close();
-
-      }
-
-    </script>
-
-  </body>
-
+<script>
+console.log('GitHub Pages Sample');
+</script>
+</body>
 </html>
